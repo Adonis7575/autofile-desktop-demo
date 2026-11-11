@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:">
+  <title>Autofile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 9a3 3 0 0 1 3-3h7l3 3h10a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/><path class="tick" d="M11 18l4 4 7-8"/></svg>
+      <h1>Autofile</h1>
+    </div>
+    <p id="status" class="status" aria-live="polite"></p>
+    <div class="actions">
+      <button id="clear" class="ghost" hidden>Clear filed</button>
+      <button id="approveAll" class="primary" hidden>Approve all ready</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="dropzone" class="dropzone">
+      <div class="drop-inner">
+        <svg class="drop-folder" viewBox="0 0 120 90" aria-hidden="true"><path d="M8 20a8 8 0 0 1 8-8h28l10 10h50a8 8 0 0 1 8 8v44a8 8 0 0 1-8 8H16a8 8 0 0 1-8-8z"/></svg>
+        <h2>Drop files or folders here</h2>
+        <p>Autofile reads each one, suggests where it goes and what to call it, and waits for your check mark before moving anything.</p>
+        <button id="browse" class="ghost">Choose files…</button>
+        <button id="sample" class="ghost">Try a sample file</button>
+        <input id="filePicker" type="file" multiple hidden>
+      </div>
+    </section>
+
+    <div id="progress" class="progress" hidden><div id="progressFill"></div></div>
+    <ol id="list" class="list" aria-label="Files to file"></ol>
+  </main>
+
+  <div id="dropOverlay" class="overlay" hidden><p>Drop to add</p></div>
+  <datalist id="destList"></datalist>
+  <script src="app.js"></script>
+</body>
+</html>
